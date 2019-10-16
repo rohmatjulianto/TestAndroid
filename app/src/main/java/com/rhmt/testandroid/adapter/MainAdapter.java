@@ -2,6 +2,7 @@ package com.rhmt.testandroid.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,13 +58,13 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.mainViewHolder
     }
 
     class mainViewHolder extends RecyclerView.ViewHolder{
-        TextView tvTitle;
+        TextView tvId;
          mainViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvTitle = itemView.findViewById(R.id.tv_title);
+            tvId = itemView.findViewById(R.id.tv_ListId);
         }
         void bind(final ListUser listUser){
-            tvTitle.setText(listUser.getTitle());
+            tvId.setText("User Id : " + listUser.getId());
         }
     }
 }

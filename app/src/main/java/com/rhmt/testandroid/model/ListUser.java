@@ -2,6 +2,7 @@ package com.rhmt.testandroid.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 
 import org.json.JSONObject;
@@ -12,22 +13,12 @@ public class ListUser implements Parcelable {
     private String title;
     private Boolean completed;
 
-    public ListUser(JSONObject jsonObject) {
-        try{
-            int user_id = jsonObject.getInt("user_id");
-            int id = jsonObject.getInt("id");
-            String title = jsonObject.getString("title");
-            Boolean completed = jsonObject.getBoolean("completed");
 
-            this.user_id = user_id;
-            this.id = id;
-            this.title = title;
-            this.completed = completed;
-
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-
+    public ListUser(int user_id, int id, String title, Boolean completed) {
+        this.user_id = user_id;
+        this.id = id;
+        this.title = title;
+        this.completed = completed;
     }
 
     public int getUser_id() {
